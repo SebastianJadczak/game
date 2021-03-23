@@ -16,8 +16,7 @@ const list_bottom = [
     { id: 3, title: "Dolor", path: "/dolor" },
 ]
 
-
-const Navigation = () => {
+const Navigation = (props) => {
 
 
     const menu_top = list_top.map(item => (
@@ -32,7 +31,7 @@ const Navigation = () => {
         <div className="nav_top">
             <ul>
                 {menu_top}
-                <li><i class="fas fa-search"></i></li>
+                <li><i class="fas fa-search" onClick={props.modal}></i></li>
             </ul>
         </div>
         <div className="nav_bottom">

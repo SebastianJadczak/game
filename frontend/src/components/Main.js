@@ -1,6 +1,7 @@
 import React from 'react'
 import { Switch, Route } from "react-router-dom";
 import Error from "./Main/Error.js"
+import Basic from "./Main/Basic.js"
 
 const Main = () => {
     return (
@@ -8,7 +9,7 @@ const Main = () => {
 
 
             <Switch>
-                <Route path="/" exact component={Error} />
+                <Route path="/" exact component={Basic} />
                 <Route path="/ipsum" component={Error} />
                 <Route path="/dolor" component={Error} />
                 <Route path="/sitAmet" component={Error} />
