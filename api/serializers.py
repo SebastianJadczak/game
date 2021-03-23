@@ -1,7 +1,9 @@
 from rest_framework import serializers
-from .models import Room
+from .models import Post
 
-class RoomSerializer(serializers.ModelSerializer):
+
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Room
-        fields = ('id', 'code', 'host', 'guest_can_pause', 'votes_to_skip', 'created_at')
+        model = Post
+        fields = ('title', 'short_descriptions',
+                  'descriptions', 'created_at', 'author', 'image')

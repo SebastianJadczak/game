@@ -1,0 +1,48 @@
+div.title {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  background: rgb(28, 28, 28);
+  background: linear-gradient(
+    180deg,
+    rgba(28, 28, 28, 1) 26%,
+    rgb(41, 41, 41) 100%
+  );
+  justify-content: center;
+}
+div.title h3 {
+  color: honeydew;
+  padding: 15px 0;
+  font-size: 22px;
+  letter-spacing: 1.8px;
+}
+div.title i {
+  color: white;
+  line-height: 60px;
+  margin: 0 10px;
+}
+div#posts {
+  width: 80vw;
+  margin: 30px auto;
+}
+div#posts ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+div#posts li {
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: 0 20px;
+}
+
+div#posts li div.image {
+  width: 250px;
+  height: 150px;
+}
+div#posts li div.image img {
+  width: 100%;
+  height: 100%;
+}
