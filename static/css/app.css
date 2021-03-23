@@ -1,0 +1,23 @@
+div#modal {
+  position: absolute;
+  top: 20vh;
+  left: 30vw;
+  border: 1px solid black;
+  box-shadow: 0 0 10px grey;
+  background-color: #fff;
+  width: 500px;
+  height: 500px;
+}
+
+span#x {
+  position: absolute;
+  top: -10px;
+  left: 31vw;
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  background-color: #fff;
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 50px;
+}
