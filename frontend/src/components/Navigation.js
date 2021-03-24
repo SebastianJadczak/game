@@ -3,17 +3,17 @@ import { NavLink } from 'react-router-dom'
 import logo from "../../static/images/testsgame.png"
 
 const list_top = [
-    { id: 1, title: "Lorem", path: "/" },
-    { id: 2, title: "Ipsum", path: "/ipsum" },
-    { id: 3, title: "Dolor", path: "/dolor" },
-    { id: 4, title: "Sit Amet", path: "/sitAmet" },
-    { id: 5, title: "Aliquip", path: "/aliquip" }
+    { id: 1, title: "Aktualności", path: "/" },
+    { id: 2, title: "Dyskusje", path: "/diskusion" },
+    { id: 3, title: "Sieć kontaktów", path: "/network" },
+    { id: 4, title: "FAQ", path: "/faq" },
+    { id: 5, title: "Kontakt", path: "/contact" }
 ]
 
 const list_bottom = [
-    { id: 1, title: "Lorem", path: "/" },
-    { id: 2, title: "Ipsum", path: "/ipsum" },
-    { id: 3, title: "Dolor", path: "/dolor" },
+    { id: 1, title: "Ping Pong", path: "/pingpong" },
+    { id: 2, title: "Platformers", path: "/platformers" },
+    { id: 3, title: "Shotgun", path: "/shotgun" },
 ]
 
 const Navigation = (props) => {
@@ -32,6 +32,7 @@ const Navigation = (props) => {
             <ul>
                 {menu_top}
                 <li><i class="fas fa-search" onClick={props.modal}></i></li>
+                <li><i class="fas fa-user-alt"></i></li>
             </ul>
         </div>
         <div className="nav_bottom">
