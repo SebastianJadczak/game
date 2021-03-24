@@ -2,7 +2,7 @@ import React from 'react'
 
 const Modal = (props) => {
     return (
-        <div className="modal" style={{display:`${props.modal}`,position:"absolute",top:"0px", left:"0px", width:"100vw", height:"100vh",backgroundColor: "rgba(255,255,255, 0.2"}}>
+        <div className="modal" style={{display:`${props.modal}`,position:"absolute",top:"0px", left:"0px", width:"100vw", height:"200vh",backgroundColor: "rgba(255,255,255, 0.7"}}>
             <div id="modal">
             <span id="x" onClick={props.closeModal}>X</span>
             <h3>Szukaj</h3>
