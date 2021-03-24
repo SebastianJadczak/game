@@ -6,7 +6,7 @@ div#modal {
   box-shadow: 0 0 10px grey;
   background-color: #fff;
   width: 500px;
-  height: 500px;
+  height: 230px;
 }
 
 span#x {
@@ -21,4 +21,52 @@ span#x {
   padding: 5px 10px;
   border-radius: 50px;
   cursor: pointer;
+}
+div#modal h3 {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1.7px;
+  margin: 20px auto;
+  color: rgb(10, 0, 56);
+}
+
+div#modal form {
+  width: 400px;
+  height: 200px;
+  margin: 30px auto 20px;
+}
+div#modal form div#checkboxs {
+  display: flex;
+  margin: 20px 12px;
+}
+div#modal form div#checkboxs div {
+  margin-right: 20px;
+}
+div#modal form div#checkboxs div label {
+  font-family: Verdana, sans-serif;
+  letter-spacing: 1.4px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+div#modal form div#search_input input {
+  width: 400px;
+  height: 32px;
+  padding-left: 8px;
+}
+div#modal form div#search {
+  text-align: right;
+}
+div#modal form div#search input {
+  background-color: rgb(0, 124, 48);
+  color: white;
+  letter-spacing: 1.6px;
+  width: 130px;
+  height: 37px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 2px rgb(68, 68, 68);
+  font-size: 16px;
 }

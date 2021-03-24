@@ -7,9 +7,13 @@ const Modal = (props) => {
             <span id="x" onClick={props.closeModal}>X</span>
             <h3>Szukaj</h3>
             <form>
-              <input id="value" type="text"></input>
-              <input type="checkbox"></input>
-              <input type="submit" value="Szukaj"></input>
+              <div id="search_input"><input id="value" type="text" placeholder="Czego szukasz?"></input></div>
+              <div id="checkboxs">
+                <div className="actual"><label>Aktualności</label><input type="checkbox" name='actual'></input></div>
+                <div className="games"><label>Gry</label><input type="checkbox" name="games"></input></div>
+                <div className="community"><label>Społeczność</label><input type="checkbox" name="community"></input></div>
+                </div>
+              <div id="search"><input type="submit" value="Szukaj"></input></div>
             </form>
           </div>
         </div>
