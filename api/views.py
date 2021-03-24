@@ -1,9 +1,14 @@
 from django.shortcuts import render
-from rest_framework import generics
-from .serializers import PostSerializer
+from rest_framework import generics,  viewsets
+from .serializers import PostSerializer, PostDetailSerializer
 from .models import Post
 
 
-class RoomView(generics.ListAPIView):
+class PostView(generics.ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+
+
+class PostDetailView(generics.RetrieveAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostDetailSerializer

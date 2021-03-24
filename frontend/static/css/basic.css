@@ -37,6 +37,10 @@ div#posts li {
   height: 250px;
   margin: 0 20px;
 }
+div#posts li a {
+  color: rgb(4, 0, 43);
+  text-decoration: none;
+}
 
 div#posts li div.image {
   width: 250px;
@@ -45,4 +49,13 @@ div#posts li div.image {
 div#posts li div.image img {
   width: 100%;
   height: 100%;
+}
+div#posts li a h3 {
+  letter-spacing: 1.3px;
+  padding: 5px 0 10px;
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+}
+div#posts li a p {
+  text-align: right;
 }
