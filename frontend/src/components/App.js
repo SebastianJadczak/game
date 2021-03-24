@@ -4,12 +4,15 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Main from "./Main.js";
 import Footer from "./Footer.js";
+import Modal from "./Modal.js";
+import Login from "./Login.js"
 
 export default class App extends Component {
   state={
     modal:'none',
+    login:'none'
 }
-modal=()=>{
+openModal=()=>{
     this.setState({
         modal: 'block'
       });
@@ -19,12 +22,23 @@ closeModal=()=>{
     modal: 'none'
   });
 }
+openLogin=()=>{
+  this.setState({
+    login: 'block'
+  });
+}
+closeLogin=()=>{
+  this.setState({
+    login: 'none'
+  });
+}
   render() {
+    const {login, modal} = this.state
     return (
       <div className="App">
         <Router>
           <nav>
-            <Navigation modal={()=>this.modal()}/>
+            <Navigation modal={()=>this.openModal()} login={()=>this.openLogin()}/>
           </nav>
           <main>
             <Main />
@@ -33,20 +47,8 @@ closeModal=()=>{
             <Footer />
           </footer>
         </Router>
-        <div style={{display:`${this.state.modal}`,position:"absolute",top:"0px", left:"0px", width:"100vw", height:"100vh",backgroundColor: "rgba(255,255,255, 0.2"}}>
-          
-          <div id="modal">
-            <span id="x" onClick={this.closeModal}>X</span>
-            <h3>Szukaj</h3>
-            <form>
-              <input id="value" type="text"></input>
-              <input type="checkbox"></input>
-              <input type="submit" value="Szukaj"></input>
-            </form>
-          </div>
-          
-         
-        </div>
+          <Modal modal={modal} closeModal={this.closeModal.bind(this)}/>
+          <Login login={login} closeLogin={this.closeLogin.bind(this)}/>
       </div>
     );
   }

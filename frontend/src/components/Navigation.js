@@ -32,7 +32,7 @@ const Navigation = (props) => {
             <ul>
                 {menu_top}
                 <li><i class="fas fa-search" onClick={props.modal}></i></li>
-                <li><i class="fas fa-user-alt"></i></li>
+                <li><i class="fas fa-user-alt" onClick={props.login}></i></li>
             </ul>
         </div>
         <div className="nav_bottom">
