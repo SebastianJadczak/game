@@ -134,18 +134,24 @@ class Platform extends Component {
 
     render(){
     return (
-        <>
-        {this.state.start?
+       <>
+        {this.state.start?  <div id="snake">
         <div className="game-area">
         <Snake snakeDots={this.state.snakeDots}/>
         <Food dot={this.state.food}/>
         </div>
+        </div>
         :
+        <div id="snake">
         <button onClick={()=>{this.setState({
             start:true
         });
-        this.component()}}>Start Game</button>}
-        </>
+        <h2>Zagraj</h2>
+        this.component()}}>Start Game</button>
+        </div>
+        }
+        
+      </>
     )
 }}
 export default Platform;

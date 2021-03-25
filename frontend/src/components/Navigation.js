@@ -12,7 +12,7 @@ const list_top = [
 
 const list_bottom = [
     { id: 1, title: "Ping Pong", path: "/pingpong" },
-    { id: 2, title: "Platformers", path: "/platformers" },
+    { id: 2, title: "SnakeGame", path: "/snakegame" },
     { id: 3, title: "Shotgun", path: "/shotgun" },
 ]
 

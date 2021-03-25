@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+nav {
+  margin: 0;
+  padding: 0;
+}
 div.nav_top {
   background: rgb(28, 28, 28);
   background: linear-gradient(
@@ -10,7 +14,8 @@ div.nav_top {
     rgba(57, 57, 57, 1) 100%
   );
   height: 5vh;
-  width: 98.6vw;
+  width: 99.9vw;
+  margin-right: 0 !important;
 }
 div.nav_top ul {
   list-style: none;
