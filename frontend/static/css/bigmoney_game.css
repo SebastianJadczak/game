@@ -1,0 +1,17 @@
+.BigMoney {
+  background-image: url("../images/bitcoin.jpg");
+  min-height: 67vh;
+  background-size: cover;
+  padding: 30px 0;
+}
+.wrap {
+  width: 40vw;
+  margin: 0 auto;
+  padding-top: 20vw;
+}
+#question {
+  background-color: #fff;
+  border-radius: 45px;
+  border: 2px solid black;
+  box-shadow: 0 0 4px black;
+}

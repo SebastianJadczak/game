@@ -146,7 +146,6 @@ class Platform extends Component {
         <button onClick={()=>{this.setState({
             start:true
         });
-        <h2>Zagraj</h2>
         this.component()}}>Start Game</button>
         </div>
         }

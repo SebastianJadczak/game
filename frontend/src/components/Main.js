@@ -5,6 +5,7 @@ import Basic from "./Main/Basic.js"
 import Post from "./Main/Post.js"
 import Contact from "./Main/Contact.js"
 import SnakeGame from "./Main/SnakeGame.js"
+import BigMoney from "./BigMoney/BigMoney.js"
 
 class Main extends Component {
     
@@ -32,7 +33,7 @@ class Main extends Component {
                 <Switch>
                     <Route path="/" exact component={Basic} />
                     <Route path="/ipsum" component={Error} />
-                    <Route path="/dolor" component={Error} />
+                    <Route path="/bigmoney" component={BigMoney} />
                     <Route path="/snakegame" component={SnakeGame} />
                     <Route path="/contact" component={Contact} />
                     <Route path="/post/" exact component={Post} />    
