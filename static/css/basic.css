@@ -1,6 +1,6 @@
 div.title {
   width: 80vw;
-  margin: 0 auto;
+  margin: 20px auto;
   display: flex;
   background: rgb(28, 28, 28);
   background: linear-gradient(
@@ -9,6 +9,8 @@ div.title {
     rgb(41, 41, 41) 100%
   );
   justify-content: center;
+  box-shadow: 0 1px 3px rgb(61, 61, 61);
+  border-radius: 65px;
 }
 div.title h3 {
   color: honeydew;
