@@ -14,18 +14,14 @@ class Post(models.Model):
         return self.title
 
 
-class Answers(models.Model):
-    title = models.CharField(max_length=200, db_index=True)
-
-    def __str__(self):
-        return self.title
-
-
 class Question(models.Model):
     id = models.AutoField(primary_key=True)
     question = models.CharField(max_length=150, db_index=True)
     good_answer = models.CharField(max_length=150, db_index=True)
-    answers = models.ManyToManyField(Answers)
+    first_answer = models.CharField(max_length=150, db_index=True)
+    second_answer = models.CharField(max_length=150, db_index=True)
+    third_answer = models.CharField(max_length=150, db_index=True)
+    fourth_answer = models.CharField(max_length=150, db_index=True)
 
     def __str__(self):
         return self.question
