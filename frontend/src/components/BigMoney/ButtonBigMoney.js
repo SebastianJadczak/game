@@ -4,7 +4,7 @@ const ButtonBigMoney = (props) => {
 
     return (
       
-       <button onClick={props.answer}>{props.text}</button> 
+       <button id="startGame" onClick={props.handleStart}>Start Game</button> 
     
     )
 }
