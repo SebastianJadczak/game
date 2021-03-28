@@ -11,7 +11,6 @@ class BigMoney extends Component{
         questions:[] ,
         good_answers: [],
         answers:[],
-        firstQuestion:"",
         firstAnswers:[],
         numberQuestion: 1,
         end_question: false,
@@ -20,7 +19,7 @@ class BigMoney extends Component{
 
     getRandomInt() {
         let min = 1
-        let max = 2
+        let max = 10
         min = Math.ceil(min);
         max = Math.floor(max);
         let random=[];
@@ -68,35 +67,44 @@ class BigMoney extends Component{
     handleStart = ()=>{
         this.getQuestion()
         this.startGame()
- 
-        
     }
     firstQuestion = ()=>{
-        for (const property in this.state.questions) {
-            this.setState({
-                modal:true,
-                firstQuestion:this.state.questions[property]
-            })
-            break;
-          }
+        let arrayQuestion = [];
+        let arrayAnswer = []
         let array = [];
-          for (const property in this.state.answers[0][0]) {
-            array.push(`${this.state.answers[0][0][property]}`)
+        for (const property in this.state.questions) {
+            arrayQuestion.push(`${this.state.questions[property]}`)
         }
-        this.setState({
-            firstAnswers: array
-        })
+        for (const property2 in this.state.answers) {
+          for (const property1 in this.state.answers[property2]) {
+            for (const property in this.state.answers[property2][property1]){
+                array.push(`${this.state.answers[property2][property1][property]}`)
+                //console.log(this.state.answers[property2][property1][property])
+        }
+        arrayAnswer.push(array)
+        array = []
+        }
+        
     }
+    console.log(arrayAnswer)
+        this.setState({
+            modal:true,
+            questions:arrayQuestion,
+            firstAnswers: arrayAnswer
+        })
+        
+    }   
 chanckCorrect = (answer)=>{
     if(answer===this.state.good_answers[0]){
+        this.state.good_answers.shift()
+        console.log(  this.state.answers[0])
+        
         this.setState({
             modal:false,
             end_question:true,
             text_after_answer: "Poprawna odpowiedź.",
             numberQuestion:this.state.numberQuestion +1
         })
-       
-        console.log(this.state.numberQuestion)
     }
     else
     this.setState({
@@ -113,28 +121,26 @@ close=()=>{
 }
 
     render(){
-        const {start, firstAnswers,numberQuestion, firstQuestion } = this.state
-        
-            
+        const {start, firstAnswers,numberQuestion, questions } = this.state
    
         return(
             <div className="BigMoney">
             {start? 
             <div id="game-wrap">
                 {this.state.modal?
-                    <div id="modal_questionGame"><Question question={firstQuestion}/>
+                    <div id="modal_questionGame"><Question question={questions[numberQuestion-1]}/>
                     <div id="answers">
-                        <Answer answer={firstAnswers[0]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[0])}/>
-                        <Answer answer={firstAnswers[1]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[1])}/>
-                        <Answer answer={firstAnswers[2]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[2])}/>
-                        <Answer answer={firstAnswers[3]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[3])}/>
+                        <Answer answer={firstAnswers[numberQuestion-1][0]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[numberQuestion-1][0])}/>
+                        <Answer answer={firstAnswers[numberQuestion-1][1]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[numberQuestion-1][1])}/>
+                        <Answer answer={firstAnswers[numberQuestion-1][2]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[numberQuestion-1][2])}/>
+                        <Answer answer={firstAnswers[numberQuestion-1][3]} chanckCorrect={()=>this.chanckCorrect(firstAnswers[numberQuestion-1][3])}/>
                     </div>
                 </div>:<button id="number_question" onClick={this.firstQuestion}>Pytanie numer {numberQuestion}</button>}
             </div>
             :
             <ButtonBigMoney handleStart={()=>this.handleStart()}/>}
             {this.state.end_question?
-            <div id="text_after_answer"> <>{this.state.text_after_answer} <button onClick={this.close}>Zamknij</button></></div>
+            <div id="text_after_answer"><h3>{this.state.text_after_answer}</h3> <button onClick={this.close}>Zamknij</button></div>
             :null}
             </div>
         ) 

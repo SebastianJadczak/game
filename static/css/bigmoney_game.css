@@ -4,14 +4,121 @@
   background-size: cover;
   padding: 30px 0;
 }
-.wrap {
-  width: 40vw;
-  margin: 0 auto;
-  padding-top: 20vw;
+#startGame {
+  position: relative;
+  top: 30vh;
+  left: 45%;
+  background-color: rgb(0, 134, 18);
+  color: white;
+  letter-spacing: 1.7px;
+  font-size: 17px;
+  font-family: Tahoma, sans-serif;
+  width: 150px;
+  height: 45px;
+  border: 0.5px solid white;
+  border-radius: 45px;
+  font-weight: bold;
+}
+#game-wrap {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  top: 4vh;
+  left: 27%;
+}
+#number_question {
+  position: relative;
+  top: 25vh;
+  left: 48%;
+  background-color: rgb(5, 71, 255);
+  color: white;
+  letter-spacing: 1.7px;
+  font-size: 15px;
+  font-family: Tahoma, sans-serif;
+  width: 170px;
+  height: 45px;
+  border: 0.5px solid white;
+  border-radius: 45px;
+  font-weight: bold;
+}
+#modal_questionGame {
+  position: relative;
+  width: 320px;
+  height: 100px;
+  top: -1vh;
+  left: 15%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgb(255, 255, 255) 26%,
+    rgb(221, 221, 221) 100%
+  );
+  border: 2px solid black;
+  border-radius: 45px;
+  padding: 50px 100px;
 }
 #question {
-  background-color: #fff;
+  text-align: center;
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  font-family: Tahoma, sans-serif;
+  color: rgb(0, 6, 41);
+}
+#question h3 {
+  margin: 0;
+}
+#answers {
+  display: flex;
+  margin: 30px 0;
+  transform: translateX(-90px);
+}
+#answer button {
+  background-color: rgb(179, 233, 255);
+  color: rgb(31, 31, 31);
+  letter-spacing: 1.5px;
+  font-size: 15px;
+  font-family: Tahoma, sans-serif;
+  width: 120px;
+  height: 38px;
+  border: 2px solid white;
   border-radius: 45px;
-  border: 2px solid black;
-  box-shadow: 0 0 4px black;
+  font-weight: bold;
+  margin-right: 7px;
+}
+#text_after_answer {
+  position: absolute;
+  top: 46vh;
+  left: 40%;
+  width: 350px;
+  height: 80px;
+  background: linear-gradient(
+    180deg,
+    rgb(230, 252, 231) 26%,
+    rgb(213, 255, 216) 100%
+  );
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 45px;
+  padding: 10px 10px;
+  border: 1px solid white;
+  box-shadow: 0 0 0 3px white;
+}
+#text_after_answer h3 {
+  color: rgb(235, 29, 29);
+  font-family: Verdana, sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+}
+#text_after_answer button {
+  margin: 16px 0;
+  color: rgb(3, 17, 61);
+  background-color: none;
+  border: 1px solid rgb(3, 17, 61);
+  width: 120px;
+  height: 36px;
+  letter-spacing: 1.6px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 25px;
+  font-size: 16px;
 }
