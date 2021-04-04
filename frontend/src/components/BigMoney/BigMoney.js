@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import ButtonBigMoney from './ButtonBigMoney'
 import Question from "./Question.js"
 import Answer from "./Answer.js"
+import Winner from "./Winner.js"
 
 class BigMoney extends Component{
 
@@ -14,7 +15,8 @@ class BigMoney extends Component{
         firstAnswers:[],
         numberQuestion: 1,
         end_question: false,
-        text_after_answer:""
+        text_after_answer:"",
+        winner:false
     }
 
     getRandomInt() {
@@ -79,14 +81,11 @@ class BigMoney extends Component{
           for (const property1 in this.state.answers[property2]) {
             for (const property in this.state.answers[property2][property1]){
                 array.push(`${this.state.answers[property2][property1][property]}`)
-                //console.log(this.state.answers[property2][property1][property])
         }
         arrayAnswer.push(array)
         array = []
-        }
-        
+        }   
     }
-    console.log(arrayAnswer)
         this.setState({
             modal:true,
             questions:arrayQuestion,
@@ -97,8 +96,6 @@ class BigMoney extends Component{
 chanckCorrect = (answer)=>{
     if(answer===this.state.good_answers[0]){
         this.state.good_answers.shift()
-        console.log(  this.state.answers[0])
-        
         this.setState({
             modal:false,
             end_question:true,
@@ -110,14 +107,32 @@ chanckCorrect = (answer)=>{
     this.setState({
         modal:false,
         end_question:true,
-        text_after_answer: "Błędna odpowiedź."
+        text_after_answer: "Błędna odpowiedź. Przegrałeś.",
+        start:false,
+        numberQuestion:1
     })
 
 }
 close=()=>{
-    this.setState({
-        end_question:false
-    })
+    console.log(this.state.numberQuestion)
+        if(this.state.numberQuestion==11){
+            this.setState({
+                start:false,
+                modal: false,
+                questions:[] ,
+                good_answers: [],
+                answers:[],
+                firstAnswers:[],
+                numberQuestion: 1,
+                end_question: false,
+                text_after_answer:"",
+                winner:true
+            })
+        }else{
+            this.setState({
+                end_question:false
+            })
+        }
 }
 
     render(){
@@ -142,6 +157,8 @@ close=()=>{
             {this.state.end_question?
             <div id="text_after_answer"><h3>{this.state.text_after_answer}</h3> <button onClick={this.close}>Zamknij</button></div>
             :null}
+            {this.state.winner?<Winner/>:null}
+            {this.state.numberQuestion ===11?"Winer!!!":null}
             </div>
         ) 
     }
