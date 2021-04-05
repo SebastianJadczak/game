@@ -25,3 +25,11 @@ class Question(models.Model):
 
     def __str__(self):
         return self.question
+
+class Faq(models.Model):
+    id = models.AutoField(primary_key=True)
+    question = models.CharField(max_length=250, db_index=True)
+    answer = models.TextField()
+
+    def __str__(self):
+        return self.question
