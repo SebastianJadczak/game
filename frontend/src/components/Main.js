@@ -7,6 +7,7 @@ import Contact from "./Main/Contact.js"
 import SnakeGame from "./Main/SnakeGame.js"
 import BigMoney from "./BigMoney/BigMoney.js"
 import Faq from "./FAQ/Faq.js"
+import Network from "./Network/Network.js"
 
 class Main extends Component {
     
@@ -24,6 +25,7 @@ class Main extends Component {
                 <Switch>
                     <Route path="/" exact component={Basic} />
                     <Route path="/faq" component={Faq} />
+                    <Route path="/network" component={Network}/>
                     <Route path="/bigmoney" component={BigMoney} />
                     <Route path="/snakegame" component={SnakeGame} />
                     <Route path="/contact" component={Contact} />
