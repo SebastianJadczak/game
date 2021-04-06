@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics,  viewsets
-from .serializers import PostSerializer, PostDetailSerializer, QuestionSerializer
-from .models import Post, Question
+from .serializers import PostSerializer, PostDetailSerializer, QuestionSerializer, FaqSerializer
+from .models import Post, Question, Faq
 
 
 class PostView(generics.ListAPIView):
@@ -17,3 +17,7 @@ class PostDetailView(generics.RetrieveAPIView):
 class QuestionView(generics.RetrieveAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
+
+class FaqView(generics.ListAPIView):
+    queryset = Faq.objects.all()
+    serializer_class = FaqSerializer

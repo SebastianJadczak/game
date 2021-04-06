@@ -6,17 +6,18 @@ div.title {
   background: linear-gradient(
     180deg,
     rgba(28, 28, 28, 1) 26%,
-    rgb(41, 41, 41) 100%
+    rgb(53, 53, 53) 100%
   );
   justify-content: center;
   box-shadow: 0 1px 3px rgb(61, 61, 61);
   border-radius: 65px;
 }
 div.title h3 {
+  font-family: Verdana, sans-serif;
   color: honeydew;
-  padding: 15px 0;
-  font-size: 22px;
-  letter-spacing: 1.8px;
+  padding: 17px 0 10px;
+  font-size: 20px;
+  letter-spacing: 1.9px;
 }
 div.title i {
   color: white;

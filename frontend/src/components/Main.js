@@ -12,20 +12,10 @@ class Main extends Component {
     
     state={
         dataPost: [],
+        list:[]
     }
 
-    componentDidMount() {
-
-        fetch('/api/room', {
-            method: 'GET'
-        })
-            .then(r => r.json())
-            .then(data => {
-                this.setState({
-                    dataPost: data
-                })
-            })
-    }
+    
 
     render(){
         return (

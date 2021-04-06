@@ -1,0 +1,58 @@
+div.faq div h3#title {
+  width: 80vw;
+  margin: 20px auto;
+  display: flex;
+  background: rgb(28, 28, 28);
+  background: linear-gradient(180deg, rgb(0, 0, 0) 78%, rgb(58, 58, 58) 100%);
+  justify-content: center;
+  box-shadow: 0 1px 3px rgb(61, 61, 61);
+  border-radius: 65px;
+  font-family: Tahoma, sans-serif;
+  color: honeydew;
+  padding: 15px 0;
+  font-size: 20px;
+  letter-spacing: 1.9px;
+}
+div.faq div#wrap {
+  width: 80vw;
+  margin: 0 auto;
+}
+div.faq div#wrap ul {
+  list-style: none;
+  margin-top: 20px;
+}
+div.faq div#wrap ul li {
+  margin: 20px auto;
+}
+div.faq div#wrap ul li div#faq_part div#question {
+  width: 60vw;
+  margin: 0 auto 20px;
+  border: 2px solid rgb(1, 0, 58);
+  border-radius: 45px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+div.faq div#wrap ul li div#faq_part div#question h3 {
+  color: rgb(1, 0, 58);
+  font-family: Tahoma, sans-serif;
+  letter-spacing: 1.8px;
+  padding: 9px 0;
+}
+div.faq div#wrap ul li div#faq_part div#question:hover {
+  background: linear-gradient(180deg, rgb(1, 0, 58) 73%, rgb(2, 0, 121) 100%);
+  box-shadow: 0 0 4px rgb(214, 214, 214);
+  transform: scale(1.1);
+  box-shadow: 0 0 3px white;
+}
+div.faq div#wrap ul li div#faq_part div#question:hover h3 {
+  color: white;
+}
+
+div.faq div#wrap ul li div#faq_part div#answer {
+  width: 80vw;
+  margin: 0 auto;
+}
+div.faq div#wrap ul li div#faq_part div#answer p {
+  font-family: Tahoma, sans-serif;
+  letter-spacing: 1.4px;
+}
