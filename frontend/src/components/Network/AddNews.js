@@ -11,7 +11,9 @@ const AddNews = ()=>{
             </div>
         </div>
         <div className="bottom">
-
+            <div id="add_video"><i class="fas fa-film"></i><p>Video</p></div>
+            <div id="add_photo"><i class="fas fa-camera"></i><p>Photo</p></div>
+            <div id="emotions"><i class="far fa-grin-wink"></i><p>Nastrój</p></div>
         </div>
         </>
     )
