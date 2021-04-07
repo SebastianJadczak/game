@@ -23,7 +23,7 @@ class NewsList extends Component {
     render() { 
         const {news} = this.state
         let newsList = news.map(item=>(
-            <li key={item.id}><News text={item.text} author={item.author}/></li>
+            <li key={item.id}><News text={item.text} author={item.user}/></li>
         ))
 
         return ( 

@@ -83,3 +83,10 @@ div.network div.center div#addNews div.bottom div#emotions i {
 div.network div.right {
   width: 25vw;
 }
+
+div.right div#sponsored {
+  margin: 20px auto;
+}
+div.right div#sponsored h3 {
+  color: rgb(39, 39, 39);
+}

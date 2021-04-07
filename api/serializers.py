@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Post, Question, Faq, News
+from .models import Post, Question, Faq, News, Sponsored
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -28,4 +28,9 @@ class FaqSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
+        fields = "__all__"
+
+class SponsoredSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Sponsored
         fields = "__all__"

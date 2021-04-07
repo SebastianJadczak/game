@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import PostView, PostDetailView, QuestionView, FaqView, NewsListView
+from .views import PostView, PostDetailView, QuestionView, FaqView, NewsListView, SponsoredListView
 from rest_framework import routers
 
 urlpatterns = [
@@ -7,5 +7,6 @@ urlpatterns = [
     path('post/<int:pk>', PostDetailView.as_view(), name='post_detail'),
     path('question/<int:pk>', QuestionView.as_view(), name='question'),
     path('faq', FaqView.as_view(), name='faq'),
-    path('news', NewsListView.as_view(), name='news')
+    path('news', NewsListView.as_view(), name='news'),
+    path('sponsored', SponsoredListView.as_view(), name='sponsored')
 ]

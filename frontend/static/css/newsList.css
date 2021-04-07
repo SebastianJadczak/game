@@ -1,0 +1,24 @@
+#news_list ul {
+  list-style: none;
+  width: 35vw;
+  margin: 20px auto;
+}
+
+#news_list ul li {
+  margin: 20px 0;
+  padding: 15px 20px;
+  background-color: #fff;
+  border: 1px solid #a0a0a0;
+  box-shadow: 0 0 5px rgb(187, 187, 187);
+  border-radius: 25px;
+}
+#news span {
+  font-weight: bold;
+  letter-spacing: 1.6px;
+  font-size: 17px;
+}
+#news p {
+  font-family: Arial, sans-serif;
+  letter-spacing: 1.4px;
+  color: #090136;
+}

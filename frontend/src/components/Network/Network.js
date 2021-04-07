@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import AddNews from './AddNews.js'
 import NewsList from './NewsList.js'
+import Sponsored from './Sponsored.js'
+import Contacts from './Contacts.js'
 
 class Network extends Component {
     render() { 
@@ -11,7 +13,10 @@ class Network extends Component {
                     <div id="addNews"><AddNews/></div>
                     <div id="news_list"><NewsList/></div>
                 </div>
-                <div className="right"></div>
+                <div className="right">
+                    <div id="sponsored"><Sponsored/></div>
+                    <div id="contacts"><Contacts/></div>
+                </div>
             </div>
          );
     }

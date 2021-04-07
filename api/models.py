@@ -41,3 +41,9 @@ class News(models.Model):
 
     class Meta:
         verbose_name_plural = "News"
+
+class Sponsored(models.Model):
+    id = models.AutoField(primary_key=True)
+    title = models.CharField( max_length=30)
+    www = models.CharField( max_length=30)
+    image = models.ImageField(upload_to='media/sponsored/%Y/%m%d')
