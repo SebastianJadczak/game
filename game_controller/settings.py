@@ -37,13 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'api.apps.ApiConfig',
     'frontend.apps.FrontendConfig',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
+    
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -71,6 +75,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'game_controller.wsgi.application'
+
+CORS_ORIGIN_WHITELIST = [
+   "http://127.0.0.1:8000"
+]
 
 
 # Database

@@ -1,6 +1,10 @@
 from django.urls import path, include
-from .views import PostView, PostDetailView, QuestionView, FaqView, NewsListView, SponsoredListView
+from .views import PostView, PostDetailView, QuestionView, FaqView, NewsListView, SponsoredListView, ContactsListView, UserViewSet
 from rest_framework import routers
+
+router = routers.SimpleRouter()
+router.register('contacts', ContactsListView)
+
 
 urlpatterns = [
     path('post', PostView.as_view()),
@@ -8,5 +12,6 @@ urlpatterns = [
     path('question/<int:pk>', QuestionView.as_view(), name='question'),
     path('faq', FaqView.as_view(), name='faq'),
     path('news', NewsListView.as_view(), name='news'),
-    path('sponsored', SponsoredListView.as_view(), name='sponsored')
+    path('sponsored', SponsoredListView.as_view(), name='sponsored'),
+    path('network/', include(router.urls))
 ]

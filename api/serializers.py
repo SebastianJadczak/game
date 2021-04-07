@@ -1,5 +1,7 @@
 from rest_framework import serializers
-from .models import Post, Question, Faq, News, Sponsored
+from django.contrib.auth.models import User
+from .models import Post, Question, Faq, News, Sponsored, Contact
+from rest_framework import serializers
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -34,3 +36,19 @@ class SponsoredSerializer(serializers.ModelSerializer):
     class Meta:
         model = Sponsored
         fields = "__all__"
+
+class ContactsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
+        fields = "__all__"
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields=['id', 'username', 'password']
+        extra_kwargs = {'password':{'write_only':True, 'required':True}}
+    
+    def create(self, validated_data):
+        user = User.objects.create_user(**validated_data)
+        Token.objects.create(user=user)
+        return user

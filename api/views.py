@@ -1,7 +1,9 @@
 from django.shortcuts import render
-from rest_framework import generics,  viewsets
-from .serializers import PostSerializer, PostDetailSerializer, QuestionSerializer, FaqSerializer, NewsSerializer, SponsoredSerializer
-from .models import Post, Question, Faq, News, Sponsored
+from rest_framework import generics,  viewsets, request
+from rest_framework.response import Response
+from django.contrib.auth.models import User
+from .serializers import PostSerializer, PostDetailSerializer, QuestionSerializer, FaqSerializer, NewsSerializer, SponsoredSerializer, ContactsSerializer, UserSerializer
+from .models import Post, Question, Faq, News, Sponsored,Contact
 
 
 class PostView(generics.ListAPIView):
@@ -30,3 +32,18 @@ class NewsListView(generics.ListAPIView):
 class SponsoredListView(generics.ListAPIView):
     queryset=Sponsored.objects.all()
     serializer_class = SponsoredSerializer
+
+class ContactsListView(viewsets.ReadOnlyModelViewSet):
+    queryset=Contact.objects.all()
+    serializer_class = ContactsSerializer
+
+    def retrieve(self, request, *args, **kwargs):
+        params = kwargs
+        contacts = Contact.objects.filter(user=params['pk'])
+        serializer = ContactsSerializer(contacts, many=True)
+        return Response(serializer.data)
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    

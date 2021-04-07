@@ -10,8 +10,10 @@ import Login from "./Login.js"
 export default class App extends Component {
   state={
     modal:'none',
-    login:'none'
+    login:'none',
+    token:null
 }
+
 openModal=()=>{
     this.setState({
         modal: 'block'
@@ -32,6 +34,19 @@ closeLogin=()=>{
     login: 'none'
   });
 }
+
+setToken(token){
+  this.setState({
+    token
+  })
+  if(this.state.token){
+    this.closeLogin()
+  }
+  else{
+    console.log("złe dane")
+  }
+}
+
   render() {
     const {login, modal} = this.state
     return (
@@ -48,7 +63,7 @@ closeLogin=()=>{
           </footer>
         </Router>
           <Modal modal={modal} closeModal={this.closeModal.bind(this)}/>
-          <Login login={login} closeLogin={this.closeLogin.bind(this)}/>
+          <Login login={login} closeLogin={this.closeLogin.bind(this)} setToken={this.setToken.bind(this)}/>
       </div>
     );
   }
