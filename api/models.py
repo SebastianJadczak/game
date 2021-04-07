@@ -39,5 +39,5 @@ class News(models.Model):
     text = models.TextField()
     user = models.CharField(max_length=150, db_index=True)
 
-    def __str__(self):
-        return self.id
+    class Meta:
+        verbose_name_plural = "News"
