@@ -1,25 +1,21 @@
 div.contact {
   min-height: 80vh;
-  width: 80vw;
   margin: 20px auto;
 }
 div.contactTitle {
-  background: rgb(28, 28, 28);
-  background: linear-gradient(
-    180deg,
-    rgba(28, 28, 28, 1) 26%,
-    rgb(41, 41, 41) 100%
-  );
+  font-family: Verdana, sans-serif;
+  width: 20vw;
+  color: rgb(19, 19, 19);
+  font-size: 20px;
+  letter-spacing: 1.9px;
   display: flex;
+  border-bottom: 1px solid grey;
+  margin: 0 auto 40px;
   text-align: center;
-  justify-content: center;
-  margin-bottom: 40px;
-  margin-top: 20px;
-  box-shadow: 0 0 4px rgb(61, 61, 61);
-  border-radius: 65px;
+  padding-left: 80px;
 }
 div.contactTitle i {
-  color: white;
+  color: rgb(19, 19, 19);
   line-height: 60px;
   margin: 0 10px;
 }
@@ -27,7 +23,7 @@ div.contactTitle i:nth-of-type(2) {
   transform: rotate(90deg);
 }
 div.contactTitle h3 {
-  color: honeydew;
+  color: rgb(19, 19, 19);
   padding: 15px 0;
   font-size: 22px;
   letter-spacing: 1.8px;

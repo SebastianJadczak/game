@@ -29,7 +29,12 @@ class Faq extends Component{
     return(
         <div className="faq">
             <div id="wrap">
-            <h3 id="title">Najczęściej zadawane pytania</h3>
+                <div className="title">
+                    <i class="fas fa-star"></i>
+                    <h3 id="title">Najczęściej zadawane pytania</h3>
+                    <i class="fas fa-star"></i>
+                </div>
+            
                 <ul>
                     {faq}
                 </ul>

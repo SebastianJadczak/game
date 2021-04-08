@@ -1,26 +1,19 @@
 div.title {
-  width: 80vw;
+  width: 20vw;
   margin: 20px auto;
   display: flex;
-  background: rgb(28, 28, 28);
-  background: linear-gradient(
-    180deg,
-    rgba(28, 28, 28, 1) 26%,
-    rgb(53, 53, 53) 100%
-  );
   justify-content: center;
-  box-shadow: 0 1px 3px rgb(61, 61, 61);
-  border-radius: 65px;
+  border-bottom: 1px solid grey;
 }
 div.title h3 {
   font-family: Verdana, sans-serif;
-  color: honeydew;
+  color: rgb(19, 19, 19);
   padding: 17px 0 10px;
   font-size: 20px;
   letter-spacing: 1.9px;
 }
 div.title i {
-  color: white;
+  color: rgb(19, 19, 19);
   line-height: 60px;
   margin: 0 10px;
 }
