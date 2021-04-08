@@ -1,4 +1,4 @@
-div#login {
+div#register {
   position: fixed;
   top: 20vh;
   left: 30vw;
@@ -9,7 +9,7 @@ div#login {
   height: 280px;
 }
 
-div#login h3 {
+div#register h3 {
   text-align: center;
   font-family: Verdana, sans-serif;
   font-size: 20px;
@@ -17,12 +17,12 @@ div#login h3 {
   margin: 20px auto;
   color: rgb(10, 0, 56);
 }
-div#login div#form {
+div#register div#form {
   width: 350px;
   height: 200px;
   margin: 30px auto 20px;
 }
-div#login div#form div label {
+div#register div#form div label {
   display: inline-block;
   width: 100px;
   font-size: 16px;
@@ -30,49 +30,42 @@ div#login div#form div label {
   font-family: Verdana, sans-serif;
   font-weight: bold;
 }
-div#login div#form div#username {
+div#register div#form div#username {
   margin-bottom: 10px;
 }
-div#login div#form div#username,
-div#login div#form div#password {
+div#register div#form div#username,
+div#register div#form div#password {
   height: 40px;
 }
-div#login div#form div input[type="text"],
-div#login div#form div input[type="password"] {
+div#register div#form div input[type="text"],
+div#register div#form div input[type="password"] {
   width: 200px;
   height: 25px;
   margin-left: 20px;
 }
-div#login div#form div#submit {
+div#register div#form div#submit {
   width: 350px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 20px auto;
 }
-div#login div#form div#submit input {
+div#register div#form div#submit input {
   margin: 0 10px;
   width: 120px;
   height: 40px;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   font-family: Verdana, sans-serif;
   letter-spacing: 1.6px;
   border: none;
 }
-div#login div#form div#submit input[type="submit"] {
+div#register div#form div#submit input[type="submit"] {
   background-color: rgb(0, 133, 18);
   color: #fff;
 }
-div#login div#form div#submit input[type="button"] {
+div#register div#form div#submit input[type="button"] {
   background-color: #fff;
   color: rgb(11, 0, 43);
   border: 0.5px solid rgb(11, 0, 43);
-}
-#register_link {
-  text-align: center;
-  color: rgb(6, 1, 65);
-  font-size: 15px;
-  font-family: Verdana, sans-serif;
-  cursor: pointer;
 }

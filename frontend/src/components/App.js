@@ -6,11 +6,13 @@ import Main from "./Main.js";
 import Footer from "./Footer.js";
 import Modal from "./Modal.js";
 import Login from "./Login.js"
+import Register from "./Register.js"
 
 export default class App extends Component {
   state={
     modal:'none',
     login:'none',
+    register:'none',
     token:null
 }
 
@@ -47,8 +49,19 @@ setToken(token){
   }
 }
 
+register=()=>{
+  this.setState({
+    login: 'none',
+    register: 'block'
+  });
+}
+closeRegister=()=>{
+  this.setState({
+    register: 'none'
+  });
+}
   render() {
-    const {login, modal} = this.state
+    const {login, modal, register} = this.state
     return (
       <div className="App">
         <Router>
@@ -63,7 +76,8 @@ setToken(token){
           </footer>
         </Router>
           <Modal modal={modal} closeModal={this.closeModal.bind(this)}/>
-          <Login login={login} closeLogin={this.closeLogin.bind(this)} setToken={this.setToken.bind(this)}/>
+          <Login login={login} register={this.register} closeLogin={this.closeLogin.bind(this)} setToken={this.setToken.bind(this)}/>
+          <Register register={register} closeRegister={this.closeRegister.bind(this)}/>
       </div>
     );
   }

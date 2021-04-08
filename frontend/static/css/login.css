@@ -5,8 +5,8 @@ div#login {
   border: 1px solid rgb(32, 7, 78);
   box-shadow: 0 0 10px grey;
   background-color: #fff;
-  width: 500px;
-  height: 250px;
+  width: 520px;
+  height: 280px;
 }
 
 div#login h3 {
@@ -68,4 +68,11 @@ div#login div#form div#submit input[type="button"] {
   background-color: #fff;
   color: rgb(11, 0, 43);
   border: 0.5px solid rgb(11, 0, 43);
+}
+#register_link {
+  text-align: center;
+  color: rgb(6, 1, 65);
+  font-size: 15px;
+  font-family: Verdana, sans-serif;
+  cursor: pointer;
 }

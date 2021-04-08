@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework import generics,  viewsets, request
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from .serializers import PostSerializer, PostDetailSerializer, QuestionSerializer, FaqSerializer, NewsSerializer, SponsoredSerializer, ContactsSerializer, UserSerializer
 from .models import Post, Question, Faq, News, Sponsored,Contact
-
 
 class PostView(generics.ListAPIView):
     queryset = Post.objects.all()
@@ -46,4 +46,5 @@ class ContactsListView(viewsets.ReadOnlyModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+    http_method_names = ['post', 'delete']
     

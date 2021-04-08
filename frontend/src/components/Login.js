@@ -27,7 +27,8 @@ class Login extends Component{
             data=>data.json()
         )
         .then(
-            data=>{ this.props.setToken(data.token)}
+            data=>{ this.props.setToken(data.token)
+            console.log(data.token)}
         )
         .catch(err=>console.error(err))
     }
@@ -46,6 +47,7 @@ class Login extends Component{
                     <input type="submit" value="Zaloguj"onClick={this.login}/>
                     <input value="Anuluj" type="button" onClick={this.props.closeLogin}/>
                 </div>
+                <p id="register_link" onClick={this.props.register}>Nie masz konta?</p>
             </div>
             </div>
         </div>
