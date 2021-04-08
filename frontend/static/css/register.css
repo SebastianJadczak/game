@@ -69,3 +69,50 @@ div#register div#form div#submit input[type="button"] {
   color: rgb(11, 0, 43);
   border: 0.5px solid rgb(11, 0, 43);
 }
+p#alert {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  font-size: 15px;
+}
+
+#thanks {
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  border: 1px solid rgb(32, 7, 78);
+  box-shadow: 0 0 10px grey;
+  background-color: #fff;
+  width: 520px;
+  height: 280px;
+}
+#thanks p {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  font-size: 25px;
+  margin: 45px 0 0 0;
+  font-family: Arial, sans-serif;
+}
+
+#thanks div {
+  margin: 12+0px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+#thanks button {
+  margin: 0 10px;
+  width: 120px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: Verdana, sans-serif;
+  letter-spacing: 1.6px;
+  border: none;
+  background-color: rgb(0, 133, 18);
+  color: #fff;
+  margin: 0 auto;
+}
