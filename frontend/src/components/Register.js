@@ -67,7 +67,7 @@ class Register extends Component{
                 </div>
             </div>
             {registerCorrect?<div id="thanks" >
-                <p>Konto zostało utworzone.</p>
+                <p>Konto zostało utworzone.<br/> Proszę się zalogować.</p>
                 <div><button onClick={this.endRegister}>Zamknij</button></div>
             </div>:null}
         </div>

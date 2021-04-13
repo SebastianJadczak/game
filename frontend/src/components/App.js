@@ -13,7 +13,8 @@ export default class App extends Component {
     modal:'none',
     login:'none',
     register:'none',
-    token:null
+    token:false,
+    textLogin:""
 }
 
 openModal=()=>{
@@ -45,7 +46,9 @@ setToken(token){
     this.closeLogin()
   }
   else{
-    console.log("złe dane")
+    this.setState({
+      textLogin: "Złe dane. Spróbuj jeszcze raz."
+    })
   }
 }
 
@@ -61,12 +64,12 @@ closeRegister=()=>{
   });
 }
   render() {
-    const {login, modal, register} = this.state
+    const {login, modal, register, token} = this.state
     return (
       <div className="App">
         <Router>
           <nav>
-            <Navigation modal={()=>this.openModal()} login={()=>this.openLogin()}/>
+            <Navigation modal={()=>this.openModal()} login={()=>this.openLogin()} token={token}/>
           </nav>
           <main>
             <Main />
@@ -76,7 +79,7 @@ closeRegister=()=>{
           </footer>
         </Router>
           <Modal modal={modal} closeModal={this.closeModal.bind(this)}/>
-          <Login login={login} register={this.register} closeLogin={this.closeLogin.bind(this)} setToken={this.setToken.bind(this)}/>
+          <Login login={login} register={this.register} closeLogin={this.closeLogin.bind(this)} setToken={this.setToken.bind(this)} text={this.state.textLogin}/>
           <Register register={register} closeRegister={this.closeRegister.bind(this)}/>
       </div>
     );
