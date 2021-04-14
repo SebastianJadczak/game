@@ -8,8 +8,7 @@ class Basic extends Component {
         dataPost: [],
     }
 
-    componentWillMount() {
-
+    componentDidMount() {
         fetch('/api/post', {
             method: 'GET'
         })

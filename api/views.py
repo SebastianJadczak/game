@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics,  viewsets, request
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from .serializers import PostSerializer, PostDetailSerializer, QuestionSerializer, FaqSerializer, NewsSerializer, SponsoredSerializer, ContactsSerializer, UserSerializer
@@ -36,6 +37,8 @@ class SponsoredListView(generics.ListAPIView):
 class ContactsListView(viewsets.ReadOnlyModelViewSet):
     queryset=Contact.objects.all()
     serializer_class = ContactsSerializer
+    authentication_classes = [TokenAuthentication,]
+    permission_classes =[IsAuthenticated,]
 
     def retrieve(self, request, *args, **kwargs):
         params = kwargs
@@ -46,5 +49,5 @@ class ContactsListView(viewsets.ReadOnlyModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    http_method_names = ['post', 'delete']
+    http_method_names = ['post',]
     

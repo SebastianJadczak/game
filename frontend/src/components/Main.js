@@ -9,14 +9,17 @@ import BigMoney from "./BigMoney/BigMoney.js"
 import Faq from "./FAQ/Faq.js"
 import Network from "./Network/Network.js"
 
+
 class Main extends Component {
+    constructor(props) {
+        super(props);
+      }
     
     state={
         dataPost: [],
         list:[]
     }
 
-    
 
     render(){
         return (
@@ -25,7 +28,7 @@ class Main extends Component {
                 <Switch>
                     <Route path="/" exact component={Basic} />
                     <Route path="/faq" component={Faq} />
-                    <Route path="/network" component={Network}/>
+                    {this.props.token?<Route path="/network" component={Network}/>:null}
                     <Route path="/bigmoney" component={BigMoney} />
                     <Route path="/snakegame" component={SnakeGame} />
                     <Route path="/contact" component={Contact} />

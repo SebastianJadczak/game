@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import image1 from "../../../static/images/m3.jpg"
 
 class Slider extends Component {
     

@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from "../../static/images/testsgame.png"
 
-const list_top = [
+let list_top = [
     { id: 1, title: "Aktualności", path: "/" },
     { id: 2, title: "Dyskusje", path: "/diskusion" },
     { id: 3, title: "Sieć kontaktów", path: "/network" },
@@ -16,8 +16,8 @@ const list_bottom = [
 ]
 
 const Navigation = (props) => {
-
-
+    let zz;
+  
     const menu_top = list_top.map(item => (
         <li key={item.id}> <NavLink key={item.id} to={item.path} >{item.title}</NavLink></li>
     ))
@@ -25,6 +25,7 @@ const Navigation = (props) => {
     const menu_bottom = list_bottom.map(item => (
         <li key={item.id}> <NavLink key={item.id} to={item.path} >{item.title}</NavLink></li>
     ))
+   
     return (
         <>
         <div className="nav_top">
