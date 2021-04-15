@@ -32,6 +32,9 @@ div.nav_top ul li {
   width: 170px;
   border-right: 1px solid grey;
 }
+div.nav_top ul li#notLogin {
+  margin-left: 293px;
+}
 div.nav_top ul li:nth-last-of-type(5) {
   width: 240px;
 }

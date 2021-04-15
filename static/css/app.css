@@ -70,3 +70,31 @@ div#modal form div#search input {
   box-shadow: 0 0 2px rgb(68, 68, 68);
   font-size: 16px;
 }
+
+/* Page Error403 */
+div.error403 {
+  min-height: 75vh;
+  background-image: url("../images/403.jpg");
+  background-position: right;
+  box-sizing: content-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.error403 h3 {
+  width: 40vw;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  top: 100px;
+  left: -5%;
+  font-size: 32px;
+  font-family: Verdana, sans-serif;
+  letter-spacing: 1.5px;
+  color: rgb(255, 255, 255);
+  font-weight: normal;
+  text-shadow: 0 0 4px black;
+}
+div.error403 h3 span {
+  font-weight: bold;
+}
