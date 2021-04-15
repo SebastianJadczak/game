@@ -34,18 +34,26 @@ class SponsoredListView(generics.ListAPIView):
     queryset=Sponsored.objects.all()
     serializer_class = SponsoredSerializer
 
-class ContactsListView(viewsets.ReadOnlyModelViewSet):
-    queryset=Contact.objects.all()
+
+class ContactsListView(generics.RetrieveAPIView):
+    queryset = Contact.objects.all()
     serializer_class = ContactsSerializer
+# class ContactsListView(viewsets.ReadOnlyModelViewSet):
+#     queryset=Contact.objects.all()
+#     serializer_class = ContactsSerializer
     # authentication_classes = [TokenAuthentication,]
     # permission_classes =[IsAuthenticated,]
 
-    def retrieve(self, request, *args, **kwargs):
+    # def retrieve(self, request, *args, **kwargs):
     #     params = kwargs
-        # contacts = Contact.objects.filter(user=params['pk'])
-        contacts = Contact.objects.all()
-        serializer = ContactsSerializer(contacts, many=True)
-        return Response(serializer.data)
+    #     contacts = Contact.objects.filter(user=params['pk'])
+    #     contacts = Contact.objects.all()
+    #     serializer = ContactsSerializer(contacts, many=True)
+    #     return Response(serializer.data)
+
+# class ContactsListView(generics.ListAPIView):
+#     queryset=Contact.objects.all()
+#     serializer_class = ContactsSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()

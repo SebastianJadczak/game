@@ -2,8 +2,8 @@ from django.urls import path, include
 from .views import PostView, PostDetailView, QuestionView, FaqView, NewsListView, SponsoredListView, ContactsListView, UserViewSet
 from rest_framework import routers
 
-router = routers.SimpleRouter()
-router.register('contacts', ContactsListView)
+# router = routers.SimpleRouter()
+# router.register('contacts', ContactsListView)
 
 
 urlpatterns = [
@@ -13,5 +13,6 @@ urlpatterns = [
     path('faq', FaqView.as_view(), name='faq'),
     path('news', NewsListView.as_view(), name='news'),
     path('sponsored', SponsoredListView.as_view(), name='sponsored'),
-    path('network/', include(router.urls))
+    path('contacts/<int:pk>', ContactsListView.as_view(), name='contacts'),
+    # path('network/', include(router.urls))
 ]
