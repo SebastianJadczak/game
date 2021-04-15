@@ -8,6 +8,7 @@ import SnakeGame from "./Main/SnakeGame.js"
 import BigMoney from "./BigMoney/BigMoney.js"
 import Faq from "./FAQ/Faq.js"
 import Network from "./Network/Network.js"
+import Error403 from "./Error/Error403.js"
 
 
 class Main extends Component {
@@ -28,7 +29,7 @@ class Main extends Component {
                 <Switch>
                     <Route path="/" exact component={Basic} />
                     <Route path="/faq" component={Faq} />
-                    {this.props.token?<Route path="/network" component={Network}/>:null}
+                    {this.props.token?<Route path="/network" component={Network}/>:<Route path="/error403" component={Error403}/>}
                     <Route path="/bigmoney" component={BigMoney} />
                     <Route path="/snakegame" component={SnakeGame} />
                     <Route path="/contact" component={Contact} />

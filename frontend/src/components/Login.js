@@ -1,24 +1,10 @@
 import React, {Component} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 import {set} from '../actions/index.js'
+import {Redirect} from 'react-router-dom'
 
-// class Login extends Component{
 const Login = (props)=>{
-    // constructor(props) {
-    //     super(props);
-    //   }
-    //   state={
-    //       credentials:{username:"", password: ""},
-         
-    //   }
-    
-    // inputhandle = e =>{
-    //     const cred = this.state.credentials
-    //     cred[e.target.name]= e.target.value
-    //     this.setState({
-    //         credentials:cred
-    //     })
-    // }
+
     const isLogged = useSelector(state=>state.isLogged);
     const isToken  = useSelector(state=>state.token )
     const dispatch = useDispatch()
@@ -36,22 +22,12 @@ const Login = (props)=>{
         .then(
             data=>{ props.setToken(data.token)
                 dispatch(set(data.token))
-            // console.log(data.token)}
             }
         )
-        .catch(err=>console.error(err))
+        .catch(err=>console.error(err));
+      
     }
 
-    function xx (){
-       loginMethod()
-        // dispatch(set(props.token))
-    }
-
-    // render(){
-
-      {/* <button onClick={()=> dispatch(set(props.token))}>xzczxczxczx</button> */}
-        {/* {console.log(isLogged)} */}
-        
         const {text, login, closeLogin, register, inputhandle} = props
 
     return (
@@ -63,7 +39,7 @@ const Login = (props)=>{
                 <div id="username"><label>Login:</label><input type="text" name="username" onChange={inputhandle} value={props.credentials.username}/></div>
                 <div id="password"><label>Password:</label><input type="password" name="password" onChange={inputhandle} value={props.credentials.password}/></div>
                 <div id="submit">
-                    <input type="submit" value="Zaloguj"onClick={xx}/>
+                    <input type="submit" value="Zaloguj"onClick={loginMethod}/>
                     <input value="Anuluj" type="button" onClick={closeLogin}/>
                 </div>
                 <p id="register_link" onClick={register}>Nie masz konta?</p>

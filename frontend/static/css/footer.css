@@ -1,16 +1,16 @@
 div.footer {
-  background: rgb(28, 28, 28);
   background: linear-gradient(
     180deg,
-    rgba(28, 28, 28, 1) 26%,
-    rgb(41, 41, 41) 100%
+    rgb(255, 255, 255) 26%,
+    rgb(238, 238, 238) 100%
   );
-  color: white;
-  font-weight: bold;
+  border-top: 1px solid rgb(201, 201, 201);
 }
 div.footer p {
   padding: 15px;
   letter-spacing: 1.7px;
   font-family: Verdana, sans-serif;
   text-align: center;
+  color: black;
+  font-weight: bold;
 }

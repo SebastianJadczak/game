@@ -9,6 +9,12 @@ let list_top = [
     { id: 4, title: "FAQ", path: "/faq" },
     { id: 5, title: "Kontakt", path: "/contact" }
 ]
+let list_top_not_login = [
+    { id: 1, title: "Aktualności", path: "/" },
+    { id: 2, title: "Dyskusje", path: "/diskusion" },
+    { id: 3, title: "FAQ", path: "/faq" },
+    { id: 4, title: "Kontakt", path: "/contact" }
+]
 
 const list_bottom = [
     { id: 1, title: "BigMoney", path: "/bigmoney" },
@@ -16,11 +22,14 @@ const list_bottom = [
 ]
 
 const Navigation = (props) => {
-    let zz;
-  
-    const menu_top = list_top.map(item => (
-        <li key={item.id}> <NavLink key={item.id} to={item.path} >{item.title}</NavLink></li>
-    ))
+    let menu_top;
+    {props.token?
+        menu_top = list_top.map(item => (
+            <li key={item.id}> <NavLink key={item.id} to={item.path} >{item.title}</NavLink></li>
+        )) :
+        menu_top = list_top_not_login.map(item => (
+            <li key={item.id}> <NavLink key={item.id} to={item.path} >{item.title}</NavLink></li>))
+        }
 
     const menu_bottom = list_bottom.map(item => (
         <li key={item.id}> <NavLink key={item.id} to={item.path} >{item.title}</NavLink></li>
@@ -31,7 +40,7 @@ const Navigation = (props) => {
         <div className="nav_top">
             <ul>
                 {menu_top}
-                <li><i class="fas fa-search" onClick={props.modal}></i></li>
+                {props.token?<li><i class="fas fa-search" onClick={props.modal}></i></li>:<li id="notLogin"><i class="fas fa-search" onClick={props.modal}></i></li>}
                 {props.token?<li><i class="fas fa-user-alt" onClick={()=>{console.log(props.token)}} style={{color:"red"}}></i></li>:<li><i class="fas fa-user-alt" onClick={props.login}></i></li>}
             </ul>
         </div>
